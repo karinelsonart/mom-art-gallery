@@ -1,0 +1,72 @@
+      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{/* Let each page set its own title */}}
+    <title>{{ .Title }} | Kari Nelson Art</title>
+
+    {{/* We will put all site-wide styles here */}}
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            background-color: #fcfcfc;
+        }
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .site-header .site-title {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+        .site-header .main-nav a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+        }
+        .site-header .social-nav a {
+            margin-left: 15px;
+            text-decoration: none;
+        }
+        .site-header .social-nav img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+    </style>
+
+    {{/* This allows individual pages (like the gallery) to add their own specific CSS */}}
+    {{ block "head-styles" . }}{{ end }}
+</head>
+<body>
+    <header class="site-header">
+        <a href="/" class="site-title">Kari Nelson</a>
+        <nav class="main-nav">
+            <a href="/">About</a>
+            <a href="/gallery">Gallery</a>
+            {{/* Add a placeholder for a contact page later */}}
+            <a href="/contact">Contact</a>
+        </nav>
+        <nav class="social-nav">
+            {{/* Replace # with actual links */}}
+            <a href="#" target="_blank" rel="noopener noreferrer" title="Facebook">
+                <img src="/social/facebook-icon.svg" alt="Facebook">
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <img src="/social/instagram-icon.svg" alt="Instagram">
+            </a>
+        </nav>
+    </header>
+<main>
+
+    
