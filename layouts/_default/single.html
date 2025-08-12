@@ -1,0 +1,9 @@
+{{ partial "header.html" . }}
+
+<div class="page-content" style="max-width: 800px; margin: 40px auto; padding: 20px; text-align: center; background-color: #fff; border: 1px solid #e0e0e0; border-radius: 6px;">
+    <h1>{{ .Title }}</h1>
+    <p style="font-size: 1.2em;">{{ .Content }}</p>
+    <p><a href="/gallery/" style="text-decoration: none; font-weight: bold;">← Back to the Gallery</a></p>
+</div>
+
+{{ partial "footer.html" . }}
