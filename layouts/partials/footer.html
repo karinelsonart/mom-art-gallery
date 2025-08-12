@@ -1,9 +1,18 @@
       
-</main>
+
+    </main>
 <footer class="site-footer" style="text-align: center; padding: 20px; margin-top: 40px; font-size: 14px; color: #888;">
+    
+    {{/* 
+      This block includes the hidden form ONLY during the Netlify build.
+      This is the magic that allows Netlify's bots to discover your form.
+      It will not appear on your local server or to your website visitors.
+    */}}
+    {{- if getenv "CONTEXT" | eq "production" -}}
+        {{- partial "forms/contact.html" . -}}
+    {{- end -}}
+
     <p>&copy; {{ now.Year }} Kari Nelson. All rights reserved.</p>
 </footer>
 </body>
 </html>
-
-    
