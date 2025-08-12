@@ -1,7 +1,7 @@
       
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=35683&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=41759&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -66,8 +66,8 @@
     
     #fullscreen-btn {
         position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.5);
-        color: white; border: none; border-radius: 4px; padding: 6px 10px;  
-        font-size: 14px; font-weight: bold;  
+        color: white; border: none; border-radius: 4px; padding: 6px 10px;
+        font-size: 14px; font-weight: bold;
         cursor: pointer; opacity: 0; transition: opacity 0.2s ease-in-out;
     }
     #main-image-wrapper:hover #fullscreen-btn { opacity: 1; }
@@ -118,19 +118,64 @@
 
     
 
-<div class="page-content" style="max-width: 800px; margin: 40px auto; padding: 20px; text-align: center; background-color: #fff; border: 1px solid #e0e0e0; border-radius: 6px;">
+
+
+
+
+    
+    
+
+<div class="page-content">
+    
     <h1>Contact</h1>
-    <p style="font-size: 1.2em;"><p>I would love to hear from you&hellip;</p>
+    
+    <p><p>I would love to hear from you! Whether you have a question about a specific piece, an inquiry about a commission, or just want to say hello, please feel free to reach out.</p>
 </p>
-    <p><a href="/gallery/" style="text-decoration: none; font-weight: bold;">← Back to the Gallery</a></p>
+
+    
+    <form class="contact-form" name="contact" method="POST" action="/thank-you/" data-netlify="true" data-netlify-honeypot="bot-field">
+        
+        <input type="hidden" name="form-name" value="contact" />
+
+        
+        <p style="display:none;">
+            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
+
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Send Message</button>
+        </div>
+    </form>
+
+    <div class="other-contact">
+        <h3>Other Ways to Reach Me</h3>
+        
+        <p>Email: <a href="mailto:karinelson@example.com">karinelson@example.com</a></p>
+        <p>You can also find me on Facebook and Instagram.</p>
+    </div>
 </div>
 
+
+
+
       
-</main>
+
+    </main>
 <footer class="site-footer" style="text-align: center; padding: 20px; margin-top: 40px; font-size: 14px; color: #888;">
+    
     <p>&copy; 2025 Kari Nelson. All rights reserved.</p>
 </footer>
 </body>
 </html>
-
-    

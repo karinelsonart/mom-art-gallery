@@ -1,9 +1,36 @@
 {{ partial "header.html" . }}
 
-<div class="page-content" style="max-width: 800px; margin: 40px auto; padding: 20px; text-align: center; background-color: #fff; border: 1px solid #e0e0e0; border-radius: 6px;">
-    <h1>{{ .Title }}</h1>
-    <p style="font-size: 1.2em;">{{ .Content }}</p>
-    <p><a href="/gallery/" style="text-decoration: none; font-weight: bold;">← Back to the Gallery</a></p>
-</div>
+{{/* 
+  This is the logic center for your pages.
+  It checks the name of the markdown file being rendered and chooses the correct content partial to display.
+*/}}
+
+{{/* Check if this is the Home page ("About") */}}
+{{ if .IsHome }}
+    <div class="page-content" style="max-width: 800px; margin: 40px auto; padding: 20px;">
+        <h1>{{ .Title }}</h1>
+        {{/* This is where the text from content/_index.md goes */}}
+        {{ .Content }}
+    </div>
+
+{{/* Check if this is the Gallery page */}}
+{{ else if eq .File.BaseFileName "gallery" }}
+    {{/* This includes everything from /partials/gallery-content.html */}}
+    {{ partial "gallery-content.html" . }}
+
+{{/* Check if this is the Contact page */}}
+{{ else if eq .File.BaseFileName "contact" }}
+    {{/* This includes everything from /partials/contact-form.html */}}
+    {{ partial "contact-form.html" . }}
+
+{{/* This is for all other simple pages (like "Thank You") */}}
+{{ else }}
+    <div class="page-content" style="max-width: 800px; margin: 40px auto; padding: 20px; text-align: center;">
+        <h1>{{ .Title }}</h1>
+        {{/* This is where the text from content/thank-you.md goes */}}
+        <p style="font-size: 1.2em;">{{ .Content }}</p>
+        <p><a href="/gallery/" style="text-decoration: none; font-weight: bold;">← Back to the Gallery</a></p>
+    </div>
+{{ end }}
 
 {{ partial "footer.html" . }}
