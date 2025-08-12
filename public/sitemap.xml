@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:41759/gallery/3d/</loc>
+    <loc>http://localhost:39263/gallery/3d/</loc>
   </url><url>
-    <loc>http://localhost:41759/</loc>
+    <loc>http://localhost:39263/</loc>
   </url><url>
-    <loc>http://localhost:41759/categories/</loc>
+    <loc>http://localhost:39263/categories/</loc>
   </url><url>
-    <loc>http://localhost:41759/contact/</loc>
+    <loc>http://localhost:39263/contact/</loc>
   </url><url>
-    <loc>http://localhost:41759/gallery/</loc>
+    <loc>http://localhost:39263/gallery/</loc>
   </url><url>
-    <loc>http://localhost:41759/tags/</loc>
+    <loc>http://localhost:39263/tags/</loc>
   </url><url>
-    <loc>http://localhost:41759/thank-you/</loc>
+    <loc>http://localhost:39263/thank-you/</loc>
   </url>
 </urlset>

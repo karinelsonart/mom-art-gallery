@@ -1,9 +1,8 @@
 {{ partial "header.html" . }}
 
-{{/* This is the main content area of your home page */}}
 <div class="page-content" style="max-width: 800px; margin: 40px auto; padding: 20px;">
-    <h1>About the Artist</h1>
-    {{/* The .Content variable will pull from content/_index.md */}}
+    <h1>{{ .Title }}</h1>
+    {{/* This is where the text from content/_index.md will go */}}
     {{ .Content }}
 </div>
 
