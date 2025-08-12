@@ -1,9 +1,6 @@
 {{ partial "header.html" . }}
 
-{{/* 
-  This logic center no longer needs to check for the Home page.
-  It only handles "single" pages.
-*/}}
+{{/* This logic center handles all "single" pages */}}
 
 {{/* Check if this is the Gallery page */}}
 {{ if eq .File.BaseFileName "gallery" }}

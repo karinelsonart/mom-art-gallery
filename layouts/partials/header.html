@@ -1,13 +1,9 @@
-      
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{/* Let each page set its own title */}}
     <title>{{ .Title }} | Kari Nelson Art</title>
-
-    {{/* We will put all site-wide styles here */}}
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -45,7 +41,7 @@
         }
     </style>
 
-    {{/* This allows individual pages (like the gallery) to add their own specific CSS */}}
+    {{/* This is the "socket" for page-specific styles */}}
     {{ block "head-styles" . }}{{ end }}
 </head>
 <body>
@@ -53,12 +49,11 @@
         <a href="/" class="site-title">Kari Nelson</a>
         <nav class="main-nav">
             <a href="/">About</a>
-            <a href="/gallery">Gallery</a>
-            {{/* Add a placeholder for a contact page later */}}
-            <a href="/contact">Contact</a>
+            <a href="/gallery/">Gallery</a>
+            <a href="/contact/">Contact</a>
         </nav>
         <nav class="social-nav">
-            {{/* Replace # with actual links */}}
+            {{/* Remember to replace # with actual links */}}
             <a href="#" target="_blank" rel="noopener noreferrer" title="Facebook">
                 <img src="/social/facebook-icon.svg" alt="Facebook">
             </a>
@@ -68,5 +63,3 @@
         </nav>
     </header>
 <main>
-
-    
