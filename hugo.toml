@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://test.karinelsonart.org/"
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 [security]

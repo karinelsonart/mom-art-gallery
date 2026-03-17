@@ -19,6 +19,10 @@
     .form-group button:hover { background-color: #555; }
     .other-contact { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; }
     .other-contact p { margin-bottom: 10px; }
+    .form-error {
+        background: #fff3cd; border: 1px solid #ffc107; border-radius: 4px;
+        padding: 12px 16px; margin-bottom: 20px; color: #856404; font-size: 15px;
+    }
 </style>
 {{ end }}
 
@@ -26,11 +30,12 @@
     <h1>{{ .Title }}</h1>
     <p>{{ .Content }}</p>
 
-    <form class="contact-form" name="contact" method="POST" action="/thank-you/" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact" />
-        <p style="display:none;">
-            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-        </p>
+    {{/* Show error message if Flask redirected back with ?error= */}}
+    <div id="form-error" class="form-error" style="display:none;"></div>
+
+    {{/* Action points to the Flask /contact-submit endpoint.
+         Caddy must proxy this path to localhost:5000 — see Caddy config. */}}
+    <form class="contact-form" method="POST" action="/contact-submit">
         <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" required>
@@ -50,7 +55,20 @@
 
     <div class="other-contact">
         <h3>Other Ways to Reach Me</h3>
-        <p>Email: <a href="mailto:karinelson@example.com">karinelson@example.com</a></p>
+        <p>Email: <a href="mailto:karinelson@gmail.com">karinelson@gmail.com</a></p>
         <p>You can also find me on Facebook and Instagram.</p>
     </div>
 </div>
+
+<script>
+    // Read ?error= param and show a friendly message
+    const params = new URLSearchParams(window.location.search);
+    const err = params.get('error');
+    if (err) {
+        const box = document.getElementById('form-error');
+        box.style.display = 'block';
+        box.textContent = err === 'missing-fields'
+            ? 'Please fill in all fields before submitting.'
+            : 'Sorry, there was a problem sending your message. Please try again or email directly.';
+    }
+</script>
