@@ -2,18 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:42161/gallery/3d/</loc>
+    <loc>https://test.karinelsonart.org/gallery/3d/</loc>
   </url><url>
-    <loc>http://localhost:42161/</loc>
+    <loc>https://test.karinelsonart.org/</loc>
   </url><url>
-    <loc>http://localhost:42161/categories/</loc>
+    <loc>https://test.karinelsonart.org/categories/</loc>
   </url><url>
-    <loc>http://localhost:42161/contact/</loc>
+    <loc>https://test.karinelsonart.org/contact/</loc>
   </url><url>
-    <loc>http://localhost:42161/gallery/</loc>
+    <loc>https://test.karinelsonart.org/gallery/</loc>
   </url><url>
-    <loc>http://localhost:42161/tags/</loc>
+    <loc>https://test.karinelsonart.org/gallery/</loc>
   </url><url>
-    <loc>http://localhost:42161/thank-you/</loc>
+    <loc>https://test.karinelsonart.org/tags/</loc>
+  </url><url>
+    <loc>https://test.karinelsonart.org/thank-you/</loc>
   </url>
 </urlset>
