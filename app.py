@@ -109,7 +109,7 @@ def allowed_file(filename):
 def rebuild_site():
     try:
         subprocess.run(
-            ["hugo", "-s", BASE_DIR, "-d", os.path.join(BASE_DIR, "public")],
+            ["/usr/bin/hugo", "-s", BASE_DIR, "-d", "/var/www/html", "--cleanDestinationDir"],
             check=True,
         )
         print("Hugo site rebuilt successfully.")
@@ -190,6 +190,7 @@ def upload():
         insert_artwork(artwork)
 
         export_csv()
+        rebuild_site()
         flash("Artwork uploaded successfully!")
         return redirect(request.url)
 
@@ -228,6 +229,7 @@ def edit(filename):
         update_artwork(artwork)
 
         export_csv()
+        rebuild_site()
         flash("Artwork updated!")
         return redirect(url_for("gallery"))
 
@@ -247,6 +249,7 @@ def delete(filename):
 
     delete_artwork(filename)
     export_csv()
+    rebuild_site()
     flash("Artwork deleted.")
     return redirect(url_for("gallery"))
 
